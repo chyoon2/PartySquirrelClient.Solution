@@ -23,8 +23,15 @@ namespace PartySquirrel.Controllers
     } 
     public IActionResult Index() //Party Index. see all the other users parties
     {
-      // var result = _db.UserIds.User.Identity.Name //get all usernames.ToList();
-      return View();
+      List<ApplicationUser> allUsers = _userManager.Users.ToList();
+      return View(allUsers);
+    }
+
+    public IActionResult Details(int id)
+    {
+      var userId = this.user.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+      var userSquirrels = _db.SquirrelUser.Where(join => join.UserId = id).Include(join => join.Squirrel).ToList();
+      return View(userSquirrels);
     }
   }
 }
