@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using PartySquirrel.ViewModels;
 
 namespace PartySquirrel.Controllers
 {
@@ -22,17 +23,16 @@ namespace PartySquirrel.Controllers
     } 
     public IActionResult Index() //gonutsnonuts page
     {
-      var result = Photo.GetPhoto();
+      var result = Src.GetPhoto();
       return View(result);
     }
 
-    [Authorize]
     public IActionResult Create() // form to add details
     {
       return View();
     }
 
-    [HttpPost, Authorize]
+    [HttpPost]
     public IActionResult Create(Squirrel squirrel)
     {
       var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
@@ -41,21 +41,19 @@ namespace PartySquirrel.Controllers
       return RedirectToAction("Details", "Parties", new { id = userId } );
     }
 
-    [Authorize]
     public IActionResult Details(int id) //squirrel details page
     {
       var thisSquirrel = _db.Squirrels.FirstOrDefault(squirrel => squirrel.SquirrelId == id);
       return View(thisSquirrel);
     }
 
-    [Authorize]
     public IActionResult Edit(int id)
     {
       var squirrelChange = _db.Squirrels.FirstOrDefault(squirrel => squirrel.SquirrelId == id);
       return View(squirrelChange);
     }
 
-    [HttpPost, Authorize]
+    [HttpPost]
     public ActionResult Edit(Squirrel squirrel)
     {
       var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;

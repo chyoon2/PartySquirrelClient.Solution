@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using PartySquirrel.Models;
+using PartySquirrel.ViewModels;
 
 namespace PartySquirrel.Controllers
 {

@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using PartySquirrel.ViewModels;
 
 
 namespace PartySquirrel.Controllers
@@ -31,7 +32,7 @@ namespace PartySquirrel.Controllers
     {
       var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 
-      var userSquirrels = _db.SquirrelUser.Where(join => join.UserId == id).Include(join => join.Squirrel).Include(join => join.UserId).ToList();
+      var userSquirrels = _db.SquirrelUser.Where(join => join.UserId == id).Include(join => join.Squirrel).Include(join => join.User).ToList();
 
       return View(userSquirrels);
     }

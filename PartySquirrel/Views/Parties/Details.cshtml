@@ -2,8 +2,14 @@
   Layout = "_Layout";
 }
 
-@model PartySquirrel.Models.SquirrelUser
+@model List<PartySquirrel.Models.SquirrelUser>
 
-<h1>@Html.DisplayFor(model => model.User.FirstName)'s Party</h1>
+@*<h1>@Html.DisplayFor(model => model.User.FirstName)'s Party</h1> pass in as a viewbag*@
 
 <ul>
+@foreach(SquirrelUser squirrel in Model)
+{
+  <li>@squirrel.Squirrel.Image</li>
+  <li>@Html.ActionLink($"{squirrel.Squirrel.Name}", "Details", "Squirrels", new { id = squirrel.Squirrel.SquirrelId })</li>
+}
+</ul>

@@ -1,6 +1,6 @@
 namespace PartySquirrel.Models
 {
-  public class ApiResponse
+  public class Root
   {
     public int total_results { get; set; }
   }

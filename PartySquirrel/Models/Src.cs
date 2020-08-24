@@ -5,7 +5,7 @@ using System;
 
 namespace PartySquirrel.Models
 {
-  public class Photo
+  public class Src
   {
     public string large { get; set; }
 
@@ -14,15 +14,15 @@ namespace PartySquirrel.Models
       var apiCallTask = ApiHelper.ApiCall(1);
       var result = apiCallTask.Result;
       JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
-      ApiResponse apiResponse = JsonConvert.DeserializeObject<ApiResponse>(jsonResponse.ToString());
+      Root root = JsonConvert.DeserializeObject<Root>(jsonResponse.ToString());
       
       Random rand = new Random();
-      int randomPage = rand.Next(1, apiResponse.total_results);
+      int randomPage = rand.Next(1, root.total_results);
 
       var apiCallTask2 = ApiHelper.ApiCall(randomPage);
       var result2 = apiCallTask2.Result;
       JObject jsonResponse2 = JsonConvert.DeserializeObject<JObject>(result2);
-      Photo apiResponse2 = JsonConvert.DeserializeObject<Photo>(jsonResponse2["photos"]["src"].ToString());
+      Src apiResponse2 = JsonConvert.DeserializeObject<Src>(jsonResponse2["photos"]["src"].ToString());
 
       return apiResponse2.large;
     }
