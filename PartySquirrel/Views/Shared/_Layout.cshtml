@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Party Squirrels</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="~/css/styles.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-transparent">
+      <a class="navbar-brand" href="/">Party Squirrels</a>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/Squirrels">Find Squirrels</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/Parties">Parties</a>
+        </li>
+        @* <li class="nav-item">
+          <a class="nav-link" href="/Parties/{id}">My Party</a>
+        </li> *@
+        <li class="nav-item">
+          <a class="nav-link" href="/Account">My Account</a>
+        </li>
+      </ul>
+      @if (User.Identity.IsAuthenticated == false) {
+      <ul class="navbar-nav ml-auto right">
+          <li class="nav-item">
+            <a class="nav-link" href="/Account/Login">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/Account/Register">Register</a>
+          </li>
+      </ul>
+      }
+    </nav>
+    <div class="container-fluid">
+      @RenderBody()
+    </div>
+  </body>
+</html>
