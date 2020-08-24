@@ -30,7 +30,7 @@ namespace PartySquirrel.Controllers
     public IActionResult Details(int id)
     {
       var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-      var userSquirrels = _db.SquirrelUser.Where(join => join.UserId = id).Include(join => join.Squirrel).ToList();
+      var userSquirrels = _db.SquirrelUser.Where(join => join.UserId = id).Include(join => join.Squirrel).Include(join => join.ApplicationUser).ToList();
       return View(userSquirrels);
     }
   }
