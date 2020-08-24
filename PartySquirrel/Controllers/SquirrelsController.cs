@@ -1,9 +1,12 @@
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using PartySquirrel.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.AspNetCore.Mvc;
-using PartySquirrel.Models;
-using Microsoft.EntityFrameworkCore;
-using System;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace PartySquirrel.Controllers
@@ -71,8 +74,8 @@ namespace PartySquirrel.Controllers
     public IActionResult DeleteConfirm (int id)
     {
       var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-      var joinList = _db.SquirrelUser.Where(entry => entry.SquirrelUserId == id).ToList();
-      var joinEntry = _db.SquirrelUser.FirstOrDefault(entry => entry.SquirrelUserId == id);
+      var joinList = _db.SquirrelUser.Where(entry => entry.SquirrelId == id).ToList();
+      var joinEntry = _db.SquirrelUser.FirstOrDefault(entry => entry.SquirrelId == id && entry.UserId == userId);
       if (joinList.Count == 1)
       {
         var thisSquirrel = _db.Squirrels.FirstOrDefault(squirrel => squirrel.SquirrelId == joinEntry.SquirrelId);
