@@ -1,7 +1,7 @@
 using System.Threading.Tasks;
 using RestSharp;
 
-namespace PartySquirrelClient.Models
+namespace PartySquirrel.Models
 {
   public class ApiHelper
   {
