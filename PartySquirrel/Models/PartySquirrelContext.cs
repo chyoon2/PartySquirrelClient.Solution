@@ -1,18 +1,17 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using System;
 
 namespace PartySquirrel.Models
 {
-  public class  PartySquirrelContext : DbContext
+  public class  PartySquirrelContext : IdentityDbContext<ApplicationUser>
   {
     public PartySquirrelContext(DbContextOptions<PartySquirrelContext> options)
         : base(options)
     {
     }
     public DbSet<Squirrel> Squirrels { get; set; }
-    
-    protected override void OnModelCreating(ModelBuilder builder)
-    {}
+    public DbSet<SquirrelUser> SquirrelUser { get; set; }
 
   }
 }
