@@ -27,10 +27,10 @@ namespace PartySquirrel.Controllers
       return View(allUsers);
     }
 
-    public IActionResult Details(int id)
+    public IActionResult Details(string id)
     {
-      var userId = this.user.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-      var userSquirrels = _db.SquirrelUser.Where(join => join.UserId = id).Include(join => join.Squirrel).ToList();
+      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+      var userSquirrels = _db.SquirrelUser.Where(join => join.UserId == id).Include(join => join.Squirrel).ToList();
       return View(userSquirrels);
     }
   }
