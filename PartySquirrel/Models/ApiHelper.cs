@@ -5,51 +5,13 @@ namespace PartySquirrel.Models
 {
   public class ApiHelper
   {
-    public static async Task<string> GetAll(string requestAddress)
+    public static async Task<string> ApiCall(int page)
     {
-      RestClient client = new RestClient("Http://localhost:5000/api/");
-      RestRequest request = new RestRequest($"{requestAddress}", Method.GET);
+      RestClient client = new RestClient("https://api.pexels.com/v1/search");
+      RestRequest request = new RestRequest($"?query=squirrel?&per_page=1&page={page}", Method.GET);
+      request.AddHeader("Authorization", "563492ad6f917000010000012f549e60513f4625a1b9736c90f8be39");
       var response = await client.ExecuteTaskAsync(request);
       return response.Content;
-    }
-
-    public static async Task<string> Get(string requestAddress)
-    {
-      RestClient client = new RestClient("Http://localhost:5000/api/");
-      RestRequest request = new RestRequest($"{requestAddress}", Method.GET);
-
-      var response = await client.ExecuteTaskAsync(request);
-      return response.Content;
-    }
-
-    public static async Task Post(string requestAddress, string insert)
-    {
-      RestClient client = new RestClient("Http://localhost:5000/api/");
-      RestRequest request = new RestRequest($"{requestAddress}", Method.POST);
-      
-      request.AddHeader("Content-Type", "application/json");
-      request.AddJsonBody(insert);
-      var response = await client.ExecuteTaskAsync(request);
-    }
-    
-    public static async Task Put(string requestAddress, string insert)
-    {
-      RestClient client = new RestClient("Http://localhost:5000/api/");
-      RestRequest request = new RestRequest($"{requestAddress}", Method.PUT);
-
-      request.AddHeader("Content-Type", "application/json");
-      request.AddJsonBody(insert);
-      var response = await client.ExecuteTaskAsync(request);
-    }
-
-    public static async Task Delete(string requestAddress)
-    {
-      RestClient client = new RestClient("Http://localhost:5000/api/");
-      RestRequest request = new RestRequest($"{requestAddress}", Method.DELETE);
-      
-      request.AddHeader("Content-Type", "application.json");
-      var response = await client.ExecuteTaskAsync(request);
-    }
-    
+    }    
   }
 }
