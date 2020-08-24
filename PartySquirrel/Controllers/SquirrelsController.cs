@@ -22,7 +22,7 @@ namespace PartySquirrel.Controllers
     } 
     public IActionResult Index() //gonutsnonuts page
     {
-      var result = Squirrel.GetSquirrel();
+      var result = Photo.GetPhoto();
       return View(result);
     }
 

@@ -21,9 +21,5 @@ namespace PartySquirrel.Models
     public string PartyLocation { get; set; }
     public DateTime PartySince { get; set; } = DateTime.Now;
     
-    public static string GetSquirrel()
-    {
-      return "Squirrel";
-    }
   }
 }
