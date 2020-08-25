@@ -1,5 +1,5 @@
 @{
- Layout = "_Layout";
+  Layout = "_Layout";
 }
 
 @model PartySquirrel.Models.Squirrel
@@ -9,7 +9,7 @@
 @Html.DisplayName("Party Squirrel") : @Html.DisplayFor(model => model.Name)
 @using (Html.BeginForm())
 {
-<input type="submit" value="Delete" class="btn btn-Default" />
+<input type="submit" value="Delete" class="btn btn-outline-dark" />
 }
 
 @Html.ActionLink("Back to the Party", "Details")

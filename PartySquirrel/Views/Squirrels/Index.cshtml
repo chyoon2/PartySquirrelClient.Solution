@@ -1,9 +1,11 @@
+@model PartySquirrel.Models.Image;
 
-<img src="@Model">
+<img src="@Model.Url">
 <div class="row">
   <div class="col-md-4">
-    @using (Html.BeginForm("Create", "Squirrels", FormMethod.Get, new { url = Model }))
+    @using (Html.BeginForm("Create", "Squirrels", FormMethod.Get))
     {
+      @Html.HiddenFor(model => model.Url)
       <input type="submit" value="Go Nuts!" class="btn btn-outline-dark">
     }
   </div>

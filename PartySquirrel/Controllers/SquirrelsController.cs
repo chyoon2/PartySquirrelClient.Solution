@@ -23,22 +23,31 @@ namespace PartySquirrel.Controllers
     } 
     public IActionResult Index() //gonutsnonuts page
     {
-      var result = Src.GetPhoto();
-      return View("Index", result);
+      Image newImage = new Image(){Url = Src.GetPhoto()};
+      return View(newImage);
     }
 
-    public IActionResult Create(string url) // form to add details
+    public IActionResult Create(Image image) // form to add details
     {
-      ViewBag.Url = url;
-      return View();
+      CreateSquirrelViewModel viewModel = new CreateSquirrelViewModel(){Image = image.Url};
+      return View(viewModel);
     }
 
     [HttpPost]
-    public async Task<IActionResult> Create(Squirrel squirrel, string url)
+    public async Task<IActionResult> Create(CreateSquirrelViewModel viewModel)
     {
       var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
       var currentUser = await _userManager.FindByIdAsync(userId);
-      squirrel.Image = url;
+      Squirrel squirrel = new Squirrel()
+      {
+        Name = viewModel.Name,
+        Image = viewModel.Image,
+        PartyTrick = viewModel.PartyTrick,
+        PartyStory = viewModel.PartyStory,
+        PartyLocation = viewModel.PartyLocation,
+        PartySince = viewModel.PartySince,
+        Creator = userId
+      };
       _db.Squirrels.Add(squirrel);
 
       _db.SquirrelUser.Add(new SquirrelUser(){SquirrelId = squirrel.SquirrelId, UserId = userId, Squirrel = squirrel, User = currentUser});

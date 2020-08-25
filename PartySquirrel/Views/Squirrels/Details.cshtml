@@ -4,10 +4,10 @@
 
 <img src="@Model.Image">
 <h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
-<h3>@Html.Display("Party Trick"): @Html.DisplayFor(model => model.PartyTrick)</h3>
-<h3>@Html.Display("Party Story"): @Html.DisplayFor(model => model.PartyStory)</h3>
-<h3>@Html.Display("Party Location"): @Html.DisplayFor(model => model.PartyLocation)</h3>
-<h3>@Html.Display("Party Since"): @Html.DisplayFor(model => model.PartySince)</h3>
+<h3>@Html.Label("Party Trick"): @Html.DisplayFor(model => model.PartyTrick)</h3>
+<h3>@Html.Label("Party Story"): @Html.DisplayFor(model => model.PartyStory)</h3>
+<h3>@Html.Label("Party Location"): @Html.DisplayFor(model => model.PartyLocation)</h3>
+<h3>@Html.Label("Party Since"): @Html.DisplayFor(model => model.PartySince)</h3>
 
 <h5>@Html.ActionLink("Back to Squirrels", "Index")</h5>
 <h5>@Html.ActionLink("Edit Squirrel", "Edit", new { id = Model.SquirrelId })</h5>
