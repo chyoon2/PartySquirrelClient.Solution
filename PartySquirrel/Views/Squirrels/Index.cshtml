@@ -1,18 +1,18 @@
 @model PartySquirrel.Models.Image;
 
-<img src="@Model.Url">
 <div class="row">
-  <div class="col-md-4">
+  <div class="col-md-6">
     @using (Html.BeginForm("Create", "Squirrels", FormMethod.Get))
     {
       @Html.HiddenFor(model => model.Url)
-      <input type="submit" value="Go Nuts!" class="btn btn-outline-dark">
+      <input type="submit" value="Go Nuts!" class="btn btn-primary btn-outline-dark">
     }
   </div>
-  <div class="col-md-4">
+  <div class="col-md-6">
     @using (Html.BeginForm("Index", "Squirrels"))
     {
-      <input type="submit" value="No Nuts!" class="btn btn-outline-dark">
+      <input type="submit" value="No Nuts!" class="btn btn-danger btn-outline-dark">
     }
   </div>
 </div>
+<img src="@Model.Url">
