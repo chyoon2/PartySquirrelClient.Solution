@@ -1,2 +1,16 @@
 
 <img src="@Model">
+<div class="row">
+  <div class="col-md-4">
+    @using (Html.BeginForm("Create", "Squirrels", FormMethod.Get))
+    {
+      <input type="submit" value="Go Nuts!" class="btn btn-outline-dark">
+    }
+  </div>
+  <div class="col-md-4">
+    @using (Html.BeginForm("Index", "Squirrels"))
+    {
+      <input type="submit" value="No Nuts!" class="btn btn-outline-dark">
+    }
+  </div>
+</div>
