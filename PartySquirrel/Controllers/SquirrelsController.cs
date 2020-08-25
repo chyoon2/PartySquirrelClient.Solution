@@ -27,17 +27,21 @@ namespace PartySquirrel.Controllers
       return View("Index", result);
     }
 
-    public IActionResult Create() // form to add details
+    public IActionResult Create(string url) // form to add details
     {
+      ViewBag.Url = url;
       return View();
     }
 
     [HttpPost]
-    public async Task<IActionResult> Create(Squirrel squirrel)
+    public async Task<IActionResult> Create(Squirrel squirrel, string url)
     {
       var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
       var currentUser = await _userManager.FindByIdAsync(userId);
+      squirrel.Image = url;
       _db.Squirrels.Add(squirrel);
+
+      _db.SquirrelUser.Add(new SquirrelUser(){SquirrelId = squirrel.SquirrelId, UserId = userId, Squirrel = squirrel, User = currentUser});
       _db.SaveChanges();
       return RedirectToAction("Details", "Parties", new { id = userId } );
     }

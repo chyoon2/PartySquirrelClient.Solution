@@ -2,7 +2,7 @@
 <img src="@Model">
 <div class="row">
   <div class="col-md-4">
-    @using (Html.BeginForm("Create", "Squirrels", FormMethod.Get))
+    @using (Html.BeginForm("Create", "Squirrels", FormMethod.Get, new { url = Model }))
     {
       <input type="submit" value="Go Nuts!" class="btn btn-outline-dark">
     }

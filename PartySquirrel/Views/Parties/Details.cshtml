@@ -14,7 +14,7 @@
 <ul>
 @foreach(SquirrelUser squirrel in Model)
 {
-  <li>@squirrel.Squirrel.Image</li>
+  <img src=@squirrel.Squirrel.Image>
   <li>@Html.ActionLink($"{squirrel.Squirrel.Name}", "Details", "Squirrels", new { id = squirrel.Squirrel.SquirrelId })</li>
 }
 </ul>
