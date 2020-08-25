@@ -6,9 +6,8 @@
 
 <h1>Squirrel Parties</h1>
 
-<ul>
+
   @foreach (ApplicationUser user in @Model)
   {
-    <li>@Html.ActionLink($"{user.FirstName}'s Party", "Details", "Parties", new { id = user.Id })</li>
+    <h3>@Html.ActionLink($"{user.FirstName}'s Party", "Details", "Parties", new { id = user.Id })</h3>
   }
-</ul>
