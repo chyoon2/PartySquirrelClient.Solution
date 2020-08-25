@@ -33,9 +33,10 @@ namespace PartySquirrel.Controllers
     }
 
     [HttpPost]
-    public IActionResult Create(Squirrel squirrel)
+    public async Task<IActionResult> Create(Squirrel squirrel)
     {
       var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+      var currentUser = await _userManager.FindByIdAsync(userId);
       _db.Squirrels.Add(squirrel);
       _db.SaveChanges();
       return RedirectToAction("Details", "Parties", new { id = userId } );

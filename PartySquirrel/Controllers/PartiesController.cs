@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using PartySquirrel.Models;
 using System;
@@ -27,11 +28,14 @@ namespace PartySquirrel.Controllers
       return View(allUsers);
     }
 
-    public IActionResult Details(string id)
+    public async Task<ActionResult> Details(string id)
     {
-      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-
-      var userSquirrels = _db.SquirrelUser.Where(join => join.UserId == id).Include(join => join.Squirrel).Include(join => join.User).ToList();
+      // var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value; 
+      // SquirrelUser profile = new SquirrelUser();
+      var user = await _userManager.FindByIdAsync(id);
+      //var profile = _db.SquirrelUser.Include(join => join.User).FirstOrDefault(join => join.UserId == id);
+      ViewBag.FirstName = user.FirstName;
+      var userSquirrels = _db.SquirrelUser.Where(join => join.UserId == id).Include(join => join.Squirrel).ToList();
 
       return View(userSquirrels);
     }

@@ -1,0 +1,25 @@
+@model PartySquirrel.Models.Squirrel
+
+<h1> Add Party Traits</h1>
+
+@using (Html.BeginForm())
+{
+  @Html.Label("Party Name:")
+  @Html.TextBoxFor(model => model.Name)
+
+  @Html.Label("Party Trick:")
+  @Html.TextBoxFor(model => model.PartyTrick)
+
+  @Html.Label("Party Story:")
+  @Html.TextBoxFor(model => model.PartyStory)
+
+  @Html.Label("Where will you find them at a Party?:")
+  @Html.TextBoxFor(model => model.PartyLocation)
+
+  @Html.Label("Been Partying since:")
+  @Html.TextBoxFor(model => model.PartySince, new { @type = "date"})
+
+  <input type="submit" value="Add Party Squirrel" class= "btn btn-outline-dark"/>
+}
+
+@Html.ActionLink("Show all Parties", "Index")

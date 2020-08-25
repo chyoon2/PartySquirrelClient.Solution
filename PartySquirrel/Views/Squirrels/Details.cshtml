@@ -1,0 +1,13 @@
+@model PartySquirrel.Models.Squirrel
+
+<h1>Squirrel Details</h1>
+
+<h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+<h3>@Html.DisplayNameFor(model => model.PartyTrick): @Html.DisplayFor(model => model.PartyTrick)</h3>
+<h3>@Html.DisplayNameFor(model => model.PartyStory): @Html.DisplayFor(model => model.PartyStory)</h3>
+<h3>@Html.DisplayNameFor(model => model.PartyLocation): @Html.DisplayFor(model => model.PartyLocation)</h3>
+<h3>@Html.DisplayNameFor(model => model.PartySince): @Html.DisplayFor(model => model.PartySince)</h3>
+
+<h5>@Html.ActionLink("Back to Squirrels", "Index")</h5>
+<h5>@Html.ActionLink("Edit Squirrel", "Edit", new { id = Model.SquirrelId })</h5>
+<h5>@Html.ActionLink("Delete Squirrel", "Delete", new { id = Model.SquirrelId })</h5>
