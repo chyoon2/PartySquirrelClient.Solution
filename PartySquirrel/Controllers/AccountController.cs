@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using PartySquirrel.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
+using System;
 
 namespace PartySquirrel.Controllers
 {
@@ -74,6 +75,35 @@ namespace PartySquirrel.Controllers
     {
       await _signInManager.SignOutAsync();
       return RedirectToAction("Index");
+    }
+
+    public async Task<ActionResult> Edit(string id)
+    {
+      var user = await _userManager.FindByIdAsync(id);
+      var model = new RegisterViewModel { Email = user.Email, FirstName = user.FirstName, LastName = user.LastName };
+      return View(model);
+    }
+
+    [HttpPost]
+    public async Task<ActionResult> Edit(RegisterViewModel model, string id)
+    {
+      var user = await _userManager.FindByIdAsync(id);
+      user.Email = model.Email;
+      user.FirstName = model.FirstName;
+      user.LastName = model.LastName;
+      if (!String.IsNullOrEmpty(model.Password)) {
+        await _userManager.RemovePasswordAsync(user);
+        await _userManager.AddPasswordAsync(user, model.Password);
+      }
+      var result = await _userManager.UpdateAsync(user);
+      if (result.Succeeded)
+      {
+        return RedirectToAction("Index");
+      }
+      else
+      {
+        return View();
+      }
     }
   }
 }
