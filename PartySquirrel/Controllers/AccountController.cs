@@ -80,7 +80,7 @@ namespace PartySquirrel.Controllers
     public async Task<ActionResult> Edit(string id)
     {
       var user = await _userManager.FindByIdAsync(id);
-      var model = new RegisterViewModel { Email = user.Email, FirstName = user.FirstName, LastName = user.LastName };
+      var model = new RegisterViewModel { Email = user.UserName, FirstName = user.FirstName, LastName = user.LastName };
       return View(model);
     }
 
@@ -88,7 +88,7 @@ namespace PartySquirrel.Controllers
     public async Task<ActionResult> Edit(RegisterViewModel model, string id)
     {
       var user = await _userManager.FindByIdAsync(id);
-      user.Email = model.Email;
+      user.UserName = model.Email;
       user.FirstName = model.FirstName;
       user.LastName = model.LastName;
       if (!String.IsNullOrEmpty(model.Password)) {

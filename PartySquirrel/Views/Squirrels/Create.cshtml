@@ -1,25 +1,31 @@
-@model PartySquirrel.Models.Squirrel
+@using PartySquirrel.ViewModels;
+@model CreateSquirrelViewModel;
+
 
 <h1> Add Party Traits</h1>
+<p>Url Contents: @Model.Image</p>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Create", "Squirrels"))
 {
-  @Html.Label("Party Name:")
-  @Html.TextBoxFor(model => model.Name)
+  <div class="form-group">
+    @Html.Label("Name:")
+    @Html.TextBoxFor(model => model.Name, new { @class="form-control", required = "required"})
 
-  @Html.Label("Party Trick:")
-  @Html.TextBoxFor(model => model.PartyTrick)
+    @Html.Label("Party Trick:")
+    @Html.TextBoxFor(model => model.PartyTrick, new { @class="form-control", required = "required"})
 
-  @Html.Label("Party Story:")
-  @Html.TextBoxFor(model => model.PartyStory)
+    @Html.Label("Party Story:")
+    @Html.TextBoxFor(model => model.PartyStory, new { @class="form-control" } )
 
-  @Html.Label("Where will you find them at a Party?:")
-  @Html.TextBoxFor(model => model.PartyLocation)
+    @Html.Label("Where will you find them at a Party?:")
+    @Html.TextBoxFor(model => model.PartyLocation, new { @class="form-control" } )
 
-  @Html.Label("Been Partying since:")
-  @Html.TextBoxFor(model => model.PartySince, new { @type = "date"})
+    @Html.Label("Been Partying since:")
+    @Html.TextBoxFor(model => model.PartySince, new { @type = "date", @class="form-control", required = "required"})
 
+    @Html.HiddenFor(model => model.Image)
+  </div>
   <input type="submit" value="Add Party Squirrel" class= "btn btn-outline-dark"/>
 }
 
-@Html.ActionLink("Show all Parties", "Index")
+@Html.ActionLink("Show all Parties", "Index", "Parties")

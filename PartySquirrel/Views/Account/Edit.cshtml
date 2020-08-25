@@ -5,22 +5,22 @@
 @using PartySquirrel.ViewModels
 @model RegisterViewModel
 
-<h1>Register a new user</h1>
+<h1>Edit your account</h1>
 
 @using (Html.BeginForm("Edit", "Account", FormMethod.Post))
 {
   <div class="form-group">
     @Html.LabelFor(user => user.FirstName)
-    @Html.EditorFor(user => user.FirstName, new {@class="form-control", required = "required"})
+    @Html.TextBoxFor(user => user.FirstName, new {@class="form-control", required = "required"})
     @Html.LabelFor(user => user.LastName)
-    @Html.EditorFor(user => user.LastName, new {@class="form-control", required = "required"})
+    @Html.TextBoxFor(user => user.LastName, new {@class="form-control", required = "required"})
     @Html.LabelFor(user => user.Email)
-    @Html.EditorFor(user => user.Email, new {@class="form-control", required = "required"})
+    @Html.TextBoxFor(user => user.Email, new {@class="form-control", required = "required"})
 
     @Html.LabelFor(user => user.Password)
-    @Html.EditorFor(user => user.Password, new {@class="form-control", required = "required"})
+    @Html.TextBoxFor(user => user.Password, new {@class="form-control", required = "required"})
     @Html.LabelFor(user => user.ConfirmPassword)
-    @Html.EditorFor(user => user.ConfirmPassword, new {@class="form-control", required = "required"})
+    @Html.TextBoxFor(user => user.ConfirmPassword, new {@class="form-control", required = "required"})
   </div>
   <input type="submit" value="Edit" class="btn btn-outline-dark">
 }

@@ -1,0 +1,29 @@
+
+@model PartySquirrel.Models.Squirrel
+
+<h1>Edit this squirrel</h1>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.SquirrelId)
+  <div class="form-group">
+    @Html.Label("Name:")
+    @Html.TextBoxFor(model => model.Name, new { @class="form-control", required = "required"})
+
+    @Html.Label("Party Trick:")
+    @Html.TextBoxFor(model => model.PartyTrick, new { @class="form-control", required = "required"})
+
+    @Html.Label("Party Story:")
+    @Html.TextBoxFor(model => model.PartyStory, new { @class="form-control" } )
+
+    @Html.Label("Where will you find them at a Party?:")
+    @Html.TextBoxFor(model => model.PartyLocation, new { @class="form-control" } )
+
+    @Html.Label("Been Partying since:")
+    @Html.TextBoxFor(model => model.PartySince, new { @type = "date", @class="form-control", required = "required"})
+
+  </div>
+  <input type="submit" value="Edit Squirrel" class= "btn btn-outline-dark"/>
+}
+
+

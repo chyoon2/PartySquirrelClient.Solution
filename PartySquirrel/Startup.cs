@@ -60,7 +60,7 @@ namespace PartySquirrel
 
         app.Run(async (context) =>
         {
-            await context.Response.WriteAsync("Something went wrong!");
+            await context.Response.WriteAsync("u suck right now");
         });
         }
     }
