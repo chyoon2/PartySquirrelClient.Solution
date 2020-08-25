@@ -10,5 +10,9 @@
 <h3>@Html.Label("Party Since"): @Html.DisplayFor(model => model.PartySince)</h3>
 
 <h5>@Html.ActionLink("Back to Squirrels", "Index")</h5>
+
+if(@Model.Creator==)
+{
 <h5>@Html.ActionLink("Edit Squirrel", "Edit", new { id = Model.SquirrelId })</h5>
 <h5>@Html.ActionLink("Delete Squirrel", "Delete", new { id = Model.SquirrelId })</h5>
+}

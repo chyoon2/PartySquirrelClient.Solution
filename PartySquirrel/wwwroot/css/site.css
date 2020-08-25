@@ -44,6 +44,8 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
 }
 .footer {
   position: absolute;
@@ -55,4 +57,47 @@ body {
   line-height: 60px; /* Vertically center the text there */
 }
 
-https://images.pexels.com/photos/2312781/pexels-photo-2312781.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500
+.carousel-item {
+  height: 100vh;
+  min-height: 350px;
+  margin: 0;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+h1 {
+  text-align: center;
+  font-size: 5em;
+}
+
+nav {
+  background-color: #00b7c2;
+}
+
+.container-fluid {
+  margin-top: 4em;
+  width: 60%;
+}
+
+.btn{
+  padding: 10px 20px;
+  font-size: 20px;
+  border-radius: 10px;
+  width: 100%;
+   /* Specify your width here */
+}
+
+.col {
+  text-align: center;
+}
+
+.carousel {
+  width: 100%;
+}
+
+h3 {
+  text-align: left;
+}
