@@ -7,7 +7,14 @@ namespace PartySquirrel.Models
 {
   public class Src
   {
-    public string large { get; set; }
+    public string original { get; set; } 
+    public string large2x { get; set; } 
+    public string large { get; set; } 
+    public string medium { get; set; } 
+    public string small { get; set; } 
+    public string portrait { get; set; } 
+    public string landscape { get; set; } 
+    public string tiny { get; set; } 
 
     public static string GetPhoto()
     {
@@ -22,9 +29,9 @@ namespace PartySquirrel.Models
       var apiCallTask2 = ApiHelper.ApiCall(randomPage);
       var result2 = apiCallTask2.Result;
       JObject jsonResponse2 = JsonConvert.DeserializeObject<JObject>(result2);
-      Src apiResponse2 = JsonConvert.DeserializeObject<Src>(jsonResponse2["photos"]["src"].ToString());
+      Root apiResponse2 = JsonConvert.DeserializeObject<Root>(jsonResponse2.ToString());
 
-      return apiResponse2.large;
+      return apiResponse2.photos[0].src.large;
     }
   }
 }

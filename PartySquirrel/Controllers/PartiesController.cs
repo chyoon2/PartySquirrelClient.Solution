@@ -10,7 +10,6 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using PartySquirrel.ViewModels;
 
-
 namespace PartySquirrel.Controllers
 {
   public class PartiesController : Controller

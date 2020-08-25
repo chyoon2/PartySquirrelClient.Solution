@@ -1,8 +1,11 @@
+
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
 using PartySquirrel.Models;
 using System.Threading.Tasks;
 using PartySquirrel.ViewModels;
+using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace PartySquirrel.Controllers
 {
@@ -19,9 +22,12 @@ namespace PartySquirrel.Controllers
       _db = db;
     }
 
-    public ActionResult Index()
+    public async Task<ActionResult> Index()
     {
-      return View();
+      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+      var currentUser = await _userManager.FindByIdAsync(userId);
+
+      return View(currentUser);
     }
 
     public IActionResult Register()

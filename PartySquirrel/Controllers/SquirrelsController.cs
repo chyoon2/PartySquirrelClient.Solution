@@ -24,7 +24,7 @@ namespace PartySquirrel.Controllers
     public IActionResult Index() //gonutsnonuts page
     {
       var result = Src.GetPhoto();
-      return View(result);
+      return View("Index", result);
     }
 
     public IActionResult Create() // form to add details
