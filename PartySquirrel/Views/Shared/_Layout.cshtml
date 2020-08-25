@@ -24,12 +24,15 @@
         <li class="nav-item">
           <a class="nav-link" href="/Parties">Parties</a>
         </li>
+        @if (User.Identity.IsAuthenticated)
+        {
         <li class="nav-item">
           <a class="nav-link" href="/Parties/Details/@this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value">My Party</a>
-        </li> 
+        </li>
         <li class="nav-item">
           <a class="nav-link" href="/Account">My Account</a>
         </li>
+        }
       </ul>
       @if (User.Identity.IsAuthenticated == false) {
       <ul class="navbar-nav ml-auto right">

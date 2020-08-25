@@ -1,18 +1,27 @@
 @model PartySquirrel.Models.Image;
-
+<link rel="stylesheet" href="~/css/squirrelindex.css">
+<script src="https://kit.fontawesome.com/f8fcdbb4ab.js" crossorigin="anonymous"></script>
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-2">
     @using (Html.BeginForm("Create", "Squirrels", FormMethod.Get))
     {
       @Html.HiddenFor(model => model.Url)
-      <input type="submit" value="Go Nuts!" class="btn btn-primary btn-outline-dark">
+      <div>
+        <i class="fas fa-acorn button-container"></i>
+        <input type="submit" value="Go Nuts!" class="btn btn-success">
+      </div>
     }
   </div>
-  <div class="col-md-6">
+  <div class="col-8">
+    <img class="squirrel-img" src="@Model.Url">
+  </div>
+  <div class="col-2">
     @using (Html.BeginForm("Index", "Squirrels"))
     {
-      <input type="submit" value="No Nuts!" class="btn btn-danger btn-outline-dark">
+      <div>
+        <i class="fas fa-acorn button-container"></i>
+        <input type="submit" value="No Nuts!" class="btn btn-danger">
+      </div>
     }
   </div>
 </div>
-<img src="@Model.Url">
