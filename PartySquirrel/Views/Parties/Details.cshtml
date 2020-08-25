@@ -1,20 +1,41 @@
 @{
   Layout = "_Layout";
 }
+<link rel="stylesheet" href="~/css/partydetails.css">
 
-@using PartySquirrel.Models
-@model List<PartySquirrel.Models.SquirrelUser>
+@using PartySquirrel.ViewModels
+@model PartyDetailsViewModel;
 
-<h1>@ViewBag.FirstName's Party</h1>
+<h1>@Model.User.FirstName's Party</h1>
 
-@if (Model.Count == 0)
+@if (Model.SquirrelCount == 0)
 {
-  <p>@ViewBag.FirstName hasn't added any party squirrels to their party!</p>
+  <p>@Model.User.FirstName hasn't added any party squirrels to their party!</p>
 }
-<ul>
-@foreach(SquirrelUser squirrel in Model)
-{
-  <img src="@squirrel.Squirrel.Image">
-  <li>@Html.ActionLink($"{squirrel.Squirrel.Name}", "Details", "Squirrels", new { id = squirrel.Squirrel.SquirrelId })</li>
-}
-</ul>
+
+<div class="row">
+  <div class = "column">
+    @foreach(SquirrelUser join in Model.Column1)
+    {
+      <a href="@Url.Action("Details", "Squirrels", new { id = join.Squirrel.SquirrelId })">
+        <img src="@join.Squirrel.Image">
+      </a>
+    }
+  </div>
+  <div class = "column">
+    @foreach(SquirrelUser join in Model.Column2)
+    {
+      <a href="@Url.Action("Details", "Squirrels", new { id = join.Squirrel.SquirrelId })">
+        <img src="@join.Squirrel.Image">
+      </a>
+    }  
+  </div>
+  <div class = "column">
+    @foreach(SquirrelUser join in Model.Column3)
+    {
+      <a href="@Url.Action("Details", "Squirrels", new { id = join.Squirrel.SquirrelId })">
+        <img src="@join.Squirrel.Image">
+      </a>
+    }
+  </div>
+</div>

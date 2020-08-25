@@ -30,14 +30,37 @@ namespace PartySquirrel.Controllers
 
     public async Task<ActionResult> Details(string id)
     {
-      // var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value; 
-      // SquirrelUser profile = new SquirrelUser();
       var user = await _userManager.FindByIdAsync(id);
-      //var profile = _db.SquirrelUser.Include(join => join.User).FirstOrDefault(join => join.UserId == id);
-      ViewBag.FirstName = user.FirstName;
-      var userSquirrels = _db.SquirrelUser.Where(join => join.UserId == id).Include(join => join.Squirrel).ToList();
-
-      return View(userSquirrels);
+      List<SquirrelUser> userSquirrels = _db.SquirrelUser.Where(join => join.UserId == id).Include(join => join.Squirrel).ToList();
+      int squirrelsCount = userSquirrels.Count();
+      PartyDetailsViewModel viewModel = new PartyDetailsViewModel();
+      viewModel.User = user;
+      viewModel.SquirrelCount = squirrelsCount;
+      int currentColumn = 1;
+      foreach(SquirrelUser join in userSquirrels)
+      {
+        if (currentColumn == 1)
+        {
+          viewModel.Column1.Add(join);
+        }
+        if (currentColumn == 2)
+        {
+          viewModel.Column2.Add(join);
+        }
+        if (currentColumn == 3)
+        {
+          viewModel.Column3.Add(join);
+        }
+        if (currentColumn < 3)
+        {
+          currentColumn ++;
+        }
+        else
+        {
+          currentColumn = 1;
+        }
+      }
+      return View(viewModel);
     }
   }
 }
