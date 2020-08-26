@@ -16,6 +16,11 @@
   width: 100%;
 }
 
+.squirrel-name {
+  text-align: center;
+  font-size: 2em;
+}
+
 @font-face{
   font-family: yamagachi2050chromeital;
   src:url("../css/fonts/yamagachi2050chromeital.ttf");

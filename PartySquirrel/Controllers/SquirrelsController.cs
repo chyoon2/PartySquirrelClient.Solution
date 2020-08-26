@@ -25,7 +25,7 @@ namespace PartySquirrel.Controllers
     public IActionResult Index() //gonutsnonuts page
     {
       CreateSquirrelViewModel viewModel = new CreateSquirrelViewModel(){Image = Src.GetPhoto()};
-      viewModel.Name = RandomName.GetRandom();
+      viewModel.Name = RandomThing.RandomName();
       return View(viewModel);
     }
     [Authorize]

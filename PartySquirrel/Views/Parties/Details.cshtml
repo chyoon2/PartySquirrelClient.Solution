@@ -3,6 +3,7 @@
 }
 
 <link rel="stylesheet" href="~/css/partydetails.css">
+<link href="https://fonts.googleapis.com/css2?family=Aclonica&family=Almendra&family=Amita&family=Arbutus&family=Audiowide&family=Barriecito&family=Creepster&family=Do+Hyeon&family=Dokdo&family=Faster+One&family=Geo&family=IM+Fell+DW+Pica&family=Irish+Grover&family=Macondo+Swash+Caps&family=MedievalSharp&family=Metal+Mania&family=Monoton&family=Russo+One&family=Saira+Stencil+One&family=Shojumaru&family=Short+Stack&family=Snowburst+One&family=Staatliches&family=Trade+Winds&family=Turret+Road&family=UnifrakturCook:wght@700&family=VT323&family=Vampiro+One&family=Vibes&family=Walter+Turncoat&family=Wendy+One&family=Yatra+One&display=swap" rel="stylesheet">
 
 @using PartySquirrel.ViewModels
 @model PartyDetailsViewModel;
@@ -18,26 +19,34 @@
   <div class = "column">
     @foreach(SquirrelUser join in Model.Column1)
     {
-      <a href="@Url.Action("Details", "Squirrels", new { id = join.Squirrel.SquirrelId })">
-        <img src="@join.Squirrel.Image">
-      </a>
+      <div>
+        <a href="@Url.Action("Details", "Squirrels", new { id = join.Squirrel.SquirrelId })">
+          <img src="@join.Squirrel.Image">
+        </a>
+      </div>
+      <div class="squirrel-name" style="@RandomThing.RandomFont()">@join.Squirrel.Name</div>
     }
   </div>
   <div class = "column">
     @foreach(SquirrelUser join in Model.Column2)
     {
-      <a href="@Url.Action("Details", "Squirrels", new { id = join.Squirrel.SquirrelId })">
-        <img src="@join.Squirrel.Image">
-      </a>
-      <div>@join.Squirrel.Name</div>
+      <div>
+        <a href="@Url.Action("Details", "Squirrels", new { id = join.Squirrel.SquirrelId })">
+          <img src="@join.Squirrel.Image">
+        </a>
+      </div>
+      <div class="squirrel-name" style="@RandomThing.RandomFont()">@join.Squirrel.Name</div>
     }  
   </div>
   <div class = "column">
     @foreach(SquirrelUser join in Model.Column3)
     {
-      <a href="@Url.Action("Details", "Squirrels", new { id = join.Squirrel.SquirrelId })">
-        <img src="@join.Squirrel.Image">
-      </a>
+      <div>
+        <a href="@Url.Action("Details", "Squirrels", new { id = join.Squirrel.SquirrelId })">
+          <img src="@join.Squirrel.Image">
+        </a>
+      </div>
+      <div class="squirrel-name" style="@RandomThing.RandomFont()">@join.Squirrel.Name</div>
     }
   </div>
 </div>

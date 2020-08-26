@@ -12,6 +12,10 @@
   margin-top: 50%;
 }
 
+.squirrel-name {
+  font-size: 3em;
+}
+
 /* body > div.container-fluid > div > div:nth-child(1) > form > input.btn.btn-success {
   margin-right: 20px;
 } */
