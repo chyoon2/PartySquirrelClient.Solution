@@ -25,3 +25,7 @@
   font-family: yamagachi2050chromeital;
   src:url("../css/fonts/yamagachi2050chromeital.ttf");
 }
+
+.mt-3 {
+  padding-bottom: 70px;
+}
