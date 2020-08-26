@@ -1,5 +1,5 @@
 .row {
-  margin-top: 12rem;
+  margin-top: 9rem;
   text-align: center;
 }
 
@@ -14,9 +14,9 @@
 }
 
 body {
-  margin-bottom: 30px;
+  padding-bottom: 70px;
 }
 
 .squirrel-name {
-  font-size: 25px;
+  font-size: 35px;
 }
