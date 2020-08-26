@@ -4,7 +4,7 @@ namespace PartySquirrel.Models
 {
   public class Root
   {
-    public int total_results { get; set; }
+    public int total_results { get; set; } = 0;
     public int page { get; set; } 
     public int per_page { get; set; } 
     public List<Photo> photos { get; set; } 
