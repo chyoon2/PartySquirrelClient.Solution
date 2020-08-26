@@ -12,6 +12,7 @@ namespace PartySquirrel.Models
     }
     public DbSet<Squirrel> Squirrels { get; set; }
     public DbSet<SquirrelUser> SquirrelUser { get; set; }
+    public DbSet<PartyMessage> PartyMessages { get; set; }
 
   }
 }

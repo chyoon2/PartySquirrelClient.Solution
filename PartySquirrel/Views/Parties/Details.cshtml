@@ -39,3 +39,12 @@
     }
   </div>
 </div>
+<div>
+  @Html.ActionLink($"Add Message", "Create", "PartyMessages", new { id = Model.User.Id, fromId = Model.CurrentUser.Id })
+</div>
+<div class="mt-3">
+  @foreach(PartyMessage message in Model.PartyMessages)
+  {
+    @Html.Partial("PartyMessage", message)
+  }
+</div>
