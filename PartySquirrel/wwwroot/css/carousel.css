@@ -1,0 +1,82 @@
+.carousel-item {
+  height: 100vh;
+  min-height: 350px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.carousel {
+  width: 100%;
+}
+.carousel-control-prev{
+  left: -100px;
+}
+.carousel-control-next{
+  right: -100px;
+}
+
+.carousel-item{
+  background-color: rgb(0,0,0,.5);
+}
+
+.full-width {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+@font-face{
+  font-family: bog;
+  src:url("../css/fonts/bog.ttf");
+}
+
+@font-face{
+  font-family: Gabo4;
+  src:url("../css/fonts/Gabo4.ttf");
+}
+
+.display2-4{
+  font-family: shlop;
+  background: red;
+  background: -webkit-linear-gradient(left, orange , yellow, green, cyan, blue, violet);
+  background: -o-linear-gradient(right, orange, yellow, green, cyan, blue, violet);
+  background: -moz-linear-gradient(right, orange, yellow, green, cyan, blue, violet);
+  background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  height: 160mm;
+  font-size: 8vw;
+}
+.display3-4{
+  color: red;
+  font-family: bog;
+  height: 100mm;
+  font-size: 10vw;
+  font-weight: bold;
+  text-shadow: 2px 2px 10px #000000;
+}
+/* font styles
+-------------------------------------------------- */
+
+.display1-4 {
+  /* font-family: 'Bangers', cursive; */
+  font-family: 'Fugaz One';
+  color: yellow;
+  font-weight: bold;
+  text-shadow: 2px 2px 10px #000000;
+  height: 99mm;
+
+  /* background: red;
+  background: -webkit-linear-gradient(left, orange , yellow, green, cyan, blue, violet);
+  background: -o-linear-gradient(right, orange, yellow, green, cyan, blue, violet);
+  background: -moz-linear-gradient(right, orange, yellow, green, cyan, blue, violet);
+  background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+  font-size: 10vw;
+  
+}

@@ -15,3 +15,8 @@
   vertical-align: middle;
   width: 100%;
 }
+
+@font-face{
+  font-family: bog;
+  src:url("../css/fonts/bog.ttf");
+}

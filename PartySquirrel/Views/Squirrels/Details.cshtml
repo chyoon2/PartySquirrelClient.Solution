@@ -1,5 +1,5 @@
 @model PartySquirrel.Models.Squirrel
-
+@using System.Security.Claims;
 <h1>Squirrel Details</h1>
 
 <img src="@Model.Image">
@@ -11,8 +11,15 @@
 
 <h5>@Html.ActionLink("Back to Squirrels", "Index")</h5>
 
-if(@Model.Creator==)
+@if (@Model.Creator == this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value)
 {
-<h5>@Html.ActionLink("Edit Squirrel", "Edit", new { id = Model.SquirrelId })</h5>
-<h5>@Html.ActionLink("Delete Squirrel", "Delete", new { id = Model.SquirrelId })</h5>
+  <h5>@Html.ActionLink("Edit Squirrel", "Edit", new { id = Model.SquirrelId })</h5>
+  <h5>@Html.ActionLink("Delete Squirrel", "Delete", new { id = Model.SquirrelId })</h5>
+}
+@if (ViewBag.AllowAdd)
+{
+  @using (Html.BeginForm("AddSquirrel", "Squirrels", new { id = Model.SquirrelId }))
+  {
+    <input type="submit" value="AddSquirrel" />
+  }
 }

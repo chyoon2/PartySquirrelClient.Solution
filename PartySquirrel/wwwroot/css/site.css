@@ -1,17 +1,50 @@
 ﻿﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
+/* font styles
+-------------------------------------------------- */
 
+@font-face{
+  font-family: bog;
+  src:url("../css/fonts/bog.ttf");
+}
+
+nav {
+  font-family: bog;
+}
 a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
+  font-family: bog;
 }
-
+a.nav-link {
+  color: rgba(240, 244, 3, 0.9);
+  transition: .5s;  /*reflections*/
+}
+nav{
+  background: rgba(240, 244, 3, 0.9);
+  box-shadow: 0 0 5px rgba(240, 244, 3, 0.9), 0 0 25px rgba(240, 244, 3, 0.9), 0 0 50px rgba(240, 244, 3, 0.9), 0 0 200px rgba(240, 244, 3, 0.9);
+  color: #050801;
+}
+a.nav-link:hover{
+  background: #03e9f4;
+  box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 200px #03e9f4;
+  color: #050801;
+}
 /* Sticky footer styles
 -------------------------------------------------- */
+
+.sponsor{
+  color: pink;
+  border: 5px solid #ddd;	/* thickness and color of border */
+  width: 200px;				/* width of image (px or % or auto) */
+  height: auto;	
+}
+
 html {
   font-size: 14px;
 }
+
 @media (min-width: 768px) {
   html {
     font-size: 16px;
@@ -21,6 +54,7 @@ html {
 .border-top {
   border-top: 1px solid #e5e5e5;
 }
+
 .border-bottom {
   border-bottom: 1px solid #e5e5e5;
 }
@@ -44,9 +78,9 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
-  font-family: 'Montserrat', sans-serif;
-  text-align: center;
+  background-color: black;
 }
+
 .footer {
   position: absolute;
   bottom: 0;
@@ -57,47 +91,35 @@ body {
   line-height: 60px; /* Vertically center the text there */
 }
 
-.carousel-item {
-  height: 100vh;
-  min-height: 350px;
-  margin: 0;
-  background: no-repeat center center scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
 h1 {
   text-align: center;
-  font-size: 5em;
+  font-size: 5rem;
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+  color: #fa26a0;
 }
 
-nav {
-  background-color: #00b7c2;
+@font-face{
+  font-family: bog;
+  src:url("../css/fonts/bog.ttf");
 }
 
 .container-fluid {
-  margin-top: 4em;
-  width: 60%;
+  width: 70%;
 }
 
 .btn{
   padding: 10px 20px;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
   font-size: 20px;
   border-radius: 10px;
-  width: 100%;
+  /* width: 75%; */
+  height: 50px;
    /* Specify your width here */
-}
-
-.col {
-  text-align: center;
-}
-
-.carousel {
-  width: 100%;
 }
 
 h3 {
   text-align: left;
 }
+
