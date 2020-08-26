@@ -5,14 +5,57 @@ using Newtonsoft.Json.Linq;
 
 namespace PartySquirrel.Models
 {
-  public class RandomName
+  public class RandomThing
   {
-    public static string GetRandom()
+    public static string RandomName()
     {
       Random rand = new Random();
       int randomIndex = rand.Next(0, _nameList.Length);
       return _nameList[randomIndex];
     }
+
+    public static string RandomFont()
+    {
+      Random rand = new Random();
+      int randomIndex = rand.Next(0, _fontList.Length);
+      return _fontList[randomIndex];
+    }
+
+    private static String[] _fontList =
+    {
+      "font-family: 'Aclonica', sans-serif;",
+      "font-family: 'Almendra', serif;",
+      "font-family: 'Amita', cursive;",
+      "font-family: 'Arbutus', cursive;",
+      "font-family: 'Audiowide', cursive;",
+      "font-family: 'Barriecito', cursive;",
+      "font-family: 'Creepster', cursive;",
+      "font-family: 'Do Hyeon', sans-serif;",
+      "font-family: 'Dokdo', cursive;",
+      "font-family: 'Faster One', cursive;",
+      "font-family: 'Geo', sans-serif;",
+      "font-family: 'IM Fell DW Pica', serif;",
+      "font-family: 'Irish Grover', cursive;",
+      "font-family: 'Macondo Swash Caps', cursive;",
+      "font-family: 'MedievalSharp', cursive;",
+      "font-family: 'Metal Mania', cursive;",
+      "font-family: 'Monoton', cursive;",
+      "font-family: 'Russo One', sans-serif;",
+      "font-family: 'Saira Stencil One', cursive;",
+      "font-family: 'Shojumaru', cursive;",
+      "font-family: 'Short Stack', cursive;",
+      "font-family: 'Snowburst One', cursive;",
+      "font-family: 'Staatliches', cursive;",
+      "font-family: 'Trade Winds', cursive;",
+      "font-family: 'Turret Road', cursive;",
+      "font-family: 'UnifrakturCook', cursive;",
+      "font-family: 'Vampiro One', cursive;",
+      "font-family: 'Vibes', cursive;",
+      "font-family: 'VT323', monospace;",
+      "font-family: 'Walter Turncoat', cursive;",
+      "font-family: 'Wendy One', sans-serif;",
+      "font-family: 'Yatra One', cursive;"
+    };
     private static String[] _nameList = 
     {
       "Zen",
