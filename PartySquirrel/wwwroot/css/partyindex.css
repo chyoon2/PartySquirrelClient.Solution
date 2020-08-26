@@ -1,13 +1,21 @@
-/*
-.linkbox {
+@font-face{
+  font-family: bog;
+  src:url("../css/fonts/bog.ttf");
+}
+
+.title{
+ font-family: bog;
+}
+
+/* .linkbox {
   box-sizing: border-box;
   align-items:center;
   background: #050801;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  min-height: 100vh;
-}*/
+  min-height: 20vh;
+} */
 
 .abtn {
   color: #03e9f4;
