@@ -24,7 +24,7 @@ namespace PartySquirrel.Models
       Root root = JsonConvert.DeserializeObject<Root>(jsonResponse.ToString());
       if (root.total_results == 0)
       {
-        return "~/img/default_squirrel.jpg";
+        return "/img/default_squirrel.jpg";
       }
       else
       {
