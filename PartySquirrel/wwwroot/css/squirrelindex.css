@@ -30,7 +30,7 @@ img {
   border-radius: 3%
 }
 /* -------------------------------- */
-/* .btnbody {
+ /* .btnbody {
   box-sizing: border-box;
   font-family: bog;
   margin: 0;
@@ -44,8 +44,8 @@ img {
   flex-flow: row wrap;
   justify-content: center;
   min-height: 100vh;
-}
-.abtn {
+} */
+/* .abtn {
   color: #03e9f4;
   display: inline-block;
   font-size: 24px;
@@ -63,19 +63,19 @@ a:hover{
   background: #03e9f4;
   box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 200px #03e9f4;
   color: #050801;
-} */
+} 
 
-/*
+
 a:nth-child(1) {
   filter: hue-rotate();
 }
 
 a:nth-child(2) {
   filter: hue-rotate(290deg);
-}*/
+}
 
 
-/* 
+
 a span{
   display: block;
   position: absolute;

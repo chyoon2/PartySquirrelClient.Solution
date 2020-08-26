@@ -18,26 +18,34 @@
   <div class = "column">
     @foreach(SquirrelUser join in Model.Column1)
     {
-      <a href="@Url.Action("Details", "Squirrels", new { id = join.Squirrel.SquirrelId })">
-        <img src="@join.Squirrel.Image">
-      </a>
+      <div>
+        <a href="@Url.Action("Details", "Squirrels", new { id = join.Squirrel.SquirrelId })">
+          <img src="@join.Squirrel.Image">
+        </a>
+      </div>
+      <div class="squirrel-name">@join.Squirrel.Name</div>
     }
   </div>
   <div class = "column">
     @foreach(SquirrelUser join in Model.Column2)
     {
-      <a href="@Url.Action("Details", "Squirrels", new { id = join.Squirrel.SquirrelId })">
-        <img src="@join.Squirrel.Image">
-      </a>
-      <div>@join.Squirrel.Name</div>
+      <div>
+        <a href="@Url.Action("Details", "Squirrels", new { id = join.Squirrel.SquirrelId })">
+          <img src="@join.Squirrel.Image">
+        </a>
+      </div>
+      <div class="squirrel-name">@join.Squirrel.Name</div>
     }  
   </div>
   <div class = "column">
     @foreach(SquirrelUser join in Model.Column3)
     {
-      <a href="@Url.Action("Details", "Squirrels", new { id = join.Squirrel.SquirrelId })">
-        <img src="@join.Squirrel.Image">
-      </a>
+      <div>
+        <a href="@Url.Action("Details", "Squirrels", new { id = join.Squirrel.SquirrelId })">
+          <img src="@join.Squirrel.Image">
+        </a>
+      </div>
+      <div class="squirrel-name">@join.Squirrel.Name</div>
     }
   </div>
 </div>

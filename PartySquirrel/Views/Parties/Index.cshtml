@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="~/css/partyindex.css">
 @model List<PartySquirrel.Models.ApplicationUser>
 
-<h1>Squirrel Parties</h1>
+<h1 class="title">Party Squirrel</h1>
 
   @foreach (ApplicationUser user in @Model)
   {
@@ -14,7 +14,7 @@
     <span></span>
     <span></span>
     <span></span>
-    @user.FirstName's Party
+    @user.FirstName's  パーティー
   </a>
 </div>
   }
