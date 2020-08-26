@@ -36,9 +36,9 @@
   filter: hue-rotate();
 }
 
-a:nth-child(2) {
+a:nth-child() {
   filter: hue-rotate(290deg);
-} */
+} */ 
 
 a:hover{
   background: #03e9f4;

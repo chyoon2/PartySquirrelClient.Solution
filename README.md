@@ -17,12 +17,12 @@ _This application will let users create accounts and add squirrels they would li
 * Install [.Net Core](https://dotnet.microsoft.com/download/dotnet-core/2.2) 
 * To install the REPL dotnet script, run `dotnet tool install -g dotnet-script` in your terminal.
 * To get an API key, create a free [Pexel account](https://www.pexels.com/).
-* Create a .env file in the root directory, then add your Pexel API key.
+* In the ApiHelper.cs file, add your Pexel API key on line 12 after `"Authorization",`.
 * Run `dotnet restore` in terminal to get all dependencies.
 * Run `dontnet build` in terminal to make sure project has everything required and no issues.
 * Run the program with the command `dotnet run`.<br>
 
-#### Additional Setup/Installation Notes:
+### Additional Setup/Installation Notes:
 
 * You will need to have [MySQL](https://www.mysql.com/) installed on your computer to start the database for this project. 
 * Once you have it installed open your terminal and `run mysql -uroot -pepicodus`. This will start the mysql server on your computer. 
