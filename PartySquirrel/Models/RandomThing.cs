@@ -21,6 +21,20 @@ namespace PartySquirrel.Models
       return _fontList[randomIndex];
     }
 
+    public static string RandomColor()
+    {
+      Random rand = new Random();
+      int randomIndex = rand.Next(0, _colorList.Length);
+      return _colorList[randomIndex];
+    }
+
+    private static String[] _colorList =
+    {
+      "#f0f403",
+      "#03e9f4",
+      "#fa26a0"
+    };
+
     private static String[] _fontList =
     {
       "font-family: 'Aclonica', sans-serif;",
