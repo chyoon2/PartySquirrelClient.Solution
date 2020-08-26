@@ -24,18 +24,18 @@ namespace PartySquirrel.Controllers
     [Authorize]
     public IActionResult Index() //gonutsnonuts page
     {
-      Image newImage = new Image(){Url = Src.GetPhoto()};
-      return View(newImage);
+      CreateSquirrelViewModel viewModel = new CreateSquirrelViewModel(){Image = Src.GetPhoto()};
+      viewModel.Name = RandomName.GetRandom();
+      return View(viewModel);
     }
     [Authorize]
-    public IActionResult Create(Image image) // form to add details
+    public IActionResult Create(CreateSquirrelViewModel viewModel) // form to add details
     {
-      CreateSquirrelViewModel viewModel = new CreateSquirrelViewModel(){Image = image.Url};
       return View(viewModel);
     }
 
     [HttpPost]
-    public async Task<IActionResult> Create(CreateSquirrelViewModel viewModel)
+    public async Task<IActionResult> CreatePost(CreateSquirrelViewModel viewModel)
     {
       var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
       var currentUser = await _userManager.FindByIdAsync(userId);
