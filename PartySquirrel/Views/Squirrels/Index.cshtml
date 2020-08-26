@@ -1,4 +1,4 @@
-@model PartySquirrel.Models.Image;
+@model PartySquirrel.ViewModels.CreateSquirrelViewModel;
 <link rel="stylesheet" href="~/css/squirrelindex.css">
 <script src="https://kit.fontawesome.com/f8fcdbb4ab.js" crossorigin="anonymous"></script>
 
@@ -7,15 +7,18 @@
   
     @using (Html.BeginForm("Create", "Squirrels", FormMethod.Get))
     {
-      @Html.HiddenFor(model => model.Url)
+      @Html.HiddenFor(model => model.Image)
+      @Html.HiddenFor(model => model.Name)
           <i class="fas fa-acorn button-container fa-5x"></i>
           <input type="submit" value="Go Nuts!" class="btn btn-success">
     }
 
   </div>
   <div class="col-8">
-    <img class="squirrel-img" src="@Model.Url">
+    <img class="squirrel-img" src="@Model.Image">
+    <p>@Model.Name</p>
   </div>
+  
   <div class="col-2">
 
     @using (Html.BeginForm("Index", "Squirrels"))
