@@ -1,7 +1,7 @@
 @model PartySquirrel.ViewModels.CreateSquirrelViewModel;
 <link rel="stylesheet" href="~/css/squirrelindex.css">
 <script src="https://kit.fontawesome.com/f8fcdbb4ab.js" crossorigin="anonymous"></script>
-
+<link href="https://fonts.googleapis.com/css2?family=Aclonica&family=Almendra&family=Amita&family=Arbutus&family=Audiowide&family=Barriecito&family=Creepster&family=Do+Hyeon&family=Dokdo&family=Faster+One&family=Geo&family=IM+Fell+DW+Pica&family=Irish+Grover&family=Macondo+Swash+Caps&family=MedievalSharp&family=Metal+Mania&family=Monoton&family=Russo+One&family=Saira+Stencil+One&family=Shojumaru&family=Short+Stack&family=Snowburst+One&family=Staatliches&family=Trade+Winds&family=Turret+Road&family=UnifrakturCook:wght@700&family=VT323&family=Vampiro+One&family=Vibes&family=Walter+Turncoat&family=Wendy+One&family=Yatra+One&display=swap" rel="stylesheet">
 <div class="row">
   <div class="col-2">
     
@@ -15,7 +15,7 @@
   </div>
   <div class="col-8">
     <img class="squirrel-img" src="@Model.Image">
-    <p>@Model.Name</p>
+    <p class="squirrel-name" style="@RandomThing.RandomFont()">@Model.Name</p>
   </div>
   
   <div class="col-2">
