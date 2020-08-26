@@ -1,0 +1,11 @@
+@using PartySquirrel.Models;
+@model PartySquirrel.Models.PartyMessage;
+
+<section class="card mb-3">
+  <div class="card-header">
+    <span>From: @Html.ActionLink($"{Model.UserFrom.UserName}", "Details", "Parties", new { id = Model.UserFromId })</span>
+  </div>
+  <div class="card-body">
+    @Model.MessageBody    
+  </div>
+</section>
