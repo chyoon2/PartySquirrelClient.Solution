@@ -4,18 +4,19 @@ for details on configuring this project to bundle and minify static web assets. 
 -------------------------------------------------- */
 
 @font-face{
-  font-family: bog;
-  src:url("../css/fonts/bog.ttf");
+  font-family: yamagachi2050chromeital;
+  src:url("../css/fonts/yamagachi2050chromeital.ttf");
 }
 
 nav {
-  font-family: bog;
+  font-family: yamagachi2050chromeital;
 }
 a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
-  font-family: bog;
+  font-family: yamagachi2050chromeital;
+  color: #C0C0C0;
 }
 a.nav-link {
   color: rgba(240, 244, 3, 0.9);
@@ -24,7 +25,7 @@ a.nav-link {
 nav{
   background: rgba(240, 244, 3, 0.9);
   box-shadow: 0 0 5px rgba(240, 244, 3, 0.9), 0 0 25px rgba(240, 244, 3, 0.9), 0 0 50px rgba(240, 244, 3, 0.9), 0 0 200px rgba(240, 244, 3, 0.9);
-  color: #050801;
+  color: #C0C0C0;
 }
 a.nav-link:hover{
   background: #03e9f4;
@@ -94,18 +95,19 @@ body {
 h1 {
   text-align: center;
   font-size: 5rem;
-  margin-top: 5rem;
+  margin-top: 7rem;
   margin-bottom: 2rem;
   color: #fa26a0;
 }
 
 @font-face{
-  font-family: bog;
-  src:url("../css/fonts/bog.ttf");
+  font-family: yamagachi2050chromeital;
+  src:url("../css/fonts/yamagachi2050chromeital.ttf");
 }
 
 .container-fluid {
   width: 70%;
+  color: gray;
 }
 
 .btn{
@@ -121,5 +123,11 @@ h1 {
 
 h3 {
   text-align: left;
+}
+
+/* ------------------------------- */
+#sqldetails img {
+  border-radius:33;
+  padding-bottom: 25px;
 }
 

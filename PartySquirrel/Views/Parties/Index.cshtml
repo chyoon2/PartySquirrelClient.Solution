@@ -1,13 +1,22 @@
 @{
   Layout = "_Layout";
 }
-
+<link rel="stylesheet" href="~/css/partyindex.css">
 @model List<PartySquirrel.Models.ApplicationUser>
 
 <h1>Squirrel Parties</h1>
 
-
   @foreach (ApplicationUser user in @Model)
   {
-    <h3>@Html.ActionLink($"{user.FirstName}'s Party", "Details", "Parties", new { id = user.Id })</h3>
+  <div class="linkbox">
+  <a class="abtn" href='/Parties/Details/@user.Id'>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    @user.FirstName's Party
+  </a>
+</div>
   }
+
+
