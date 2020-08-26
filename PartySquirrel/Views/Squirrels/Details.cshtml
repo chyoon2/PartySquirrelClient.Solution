@@ -1,25 +1,28 @@
 @model PartySquirrel.Models.Squirrel
 @using System.Security.Claims;
+<link rel="stylesheet" href="~/css/site.css">
 <h1>Squirrel Details</h1>
 
-<img src="@Model.Image">
-<h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
-<h3>@Html.Label("Party Trick"): @Html.DisplayFor(model => model.PartyTrick)</h3>
-<h3>@Html.Label("Party Story"): @Html.DisplayFor(model => model.PartyStory)</h3>
-<h3>@Html.Label("Party Location"): @Html.DisplayFor(model => model.PartyLocation)</h3>
-<h3>@Html.Label("Party Since"): @Html.DisplayFor(model => model.PartySince)</h3>
+<div id="sqldetails">
+  <img src="@Model.Image">
+  <h3>@Html.Label("Name"): @Html.DisplayFor(model => model.Name)</h3>
+  <h3>@Html.Label("Party Trick"): @Html.DisplayFor(model => model.PartyTrick)</h3>
+  <h3>@Html.Label("Party Story"): @Html.DisplayFor(model => model.PartyStory)</h3>
+  <h3>@Html.Label("Party Location"): @Html.DisplayFor(model => model.PartyLocation)</h3>
+  <h3>@Html.Label("Party Since"): @Html.DisplayFor(model => model.PartySince)</h3>
 
-<h5>@Html.ActionLink("Back to Squirrels", "Index")</h5>
+  <h5>@Html.ActionLink("Back to Squirrels", "Index")</h5>
 
-@if (@Model.Creator == this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value)
-{
-  <h5>@Html.ActionLink("Edit Squirrel", "Edit", new { id = Model.SquirrelId })</h5>
-  <h5>@Html.ActionLink("Delete Squirrel", "Delete", new { id = Model.SquirrelId })</h5>
-}
-@if (ViewBag.AllowAdd)
-{
-  @using (Html.BeginForm("AddSquirrel", "Squirrels", new { id = Model.SquirrelId }))
+  @if (@Model.Creator == this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value)
   {
-    <input type="submit" value="AddSquirrel" />
+    <h5>@Html.ActionLink("Edit Squirrel", "Edit", new { id = Model.SquirrelId })</h5>
+    <h5>@Html.ActionLink("Delete Squirrel", "Delete", new { id = Model.SquirrelId })</h5>
   }
-}
+  @if (ViewBag.AllowAdd)
+  {
+    @using (Html.BeginForm("AddSquirrel", "Squirrels", new { id = Model.SquirrelId }))
+    {
+      <input type="submit" value="AddSquirrel" />
+    }
+  }
+</div>

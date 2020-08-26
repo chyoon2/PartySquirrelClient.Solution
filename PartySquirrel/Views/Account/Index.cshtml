@@ -14,7 +14,7 @@
   <h5>@Html.ActionLink("Edit Account", "Edit", new { id = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value})</h5>
   @using (Html.BeginForm("LogOff", "Account"))
   {
-    <input type="submit" class="btn btn-outline-dark" value="Log out">
+    <input type="submit" class="btn btn-secondary" value="Log out">
   }
 }  
 else

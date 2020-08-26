@@ -1,5 +1,5 @@
 .row {
-  margin-top: 15rem;
+  margin-top: 12rem;
   text-align: center;
 }
 
@@ -126,7 +126,7 @@ a span:nth-child(1) {
       100% {
         right: 100%;
         }
-      }
+      } 
 
       a span:nth-child(4) {
         animation: animate4 1s linear infinite;

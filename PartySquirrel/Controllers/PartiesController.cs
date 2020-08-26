@@ -13,6 +13,7 @@ using PartySquirrel.ViewModels;
 
 namespace PartySquirrel.Controllers
 {
+  [Authorize]
   public class PartiesController : Controller
   {
     private readonly PartySquirrelContext _db;
