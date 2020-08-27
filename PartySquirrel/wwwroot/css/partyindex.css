@@ -1,24 +1,24 @@
 @font-face{
-  font-family: bog;
-  src:url("../css/fonts/bog.ttf");
+  font-family: road;
+  src:url("../css/fonts/road.otf");
 }
 @font-face{
-  font-family: yellowc;
-  src:url("../css/fonts/yellowc.ttf");
+  font-family: bog;
+  src:url("../css/fonts/bog.ttf");
 }
 .title{
   font-family: bog;
 }
 
-/* .linkbox {
+.linkbox {
   box-sizing: border-box;
   align-items:center;
   background: #050801;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  min-height: 20vh;
-} */
+  min-height: 30vh;
+} 
 
 .abtn {
   color: #03e9f4;
@@ -45,7 +45,7 @@ a:nth-child() {
 
 a:hover{
   background: #fa26a0;
-  box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 200px #03e9f4;
+  box-shadow: 0 0 5px #03e9f4, 0 0 25px #03f423, 0 0 50px #6b03f4, 0 0 200px #fa26a0;
   color: #050801;
 } 
 
