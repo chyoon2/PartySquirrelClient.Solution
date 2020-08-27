@@ -4,18 +4,18 @@ for details on configuring this project to bundle and minify static web assets. 
 -------------------------------------------------- */
 
 @font-face{
-  font-family: yamagachi2050chromeital;
-  src:url("../css/fonts/yamagachi2050chromeital.ttf");
+  font-family: yellowc;
+  src:url("../css/fonts/yellowc.ttf");
 }
 
 nav {
-  font-family: yamagachi2050chromeital;
+  font-family: yellowc;
 }
 a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
-  font-family: yamagachi2050chromeital;
+  font-family: yellowc;
   color: #C0C0C0;
 }
 a.nav-link {
