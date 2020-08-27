@@ -2,9 +2,39 @@
 <link rel="stylesheet" href="~/css/squirrelindex.css">
 <script src="https://kit.fontawesome.com/f8fcdbb4ab.js" crossorigin="anonymous"></script>
 <link href="https://fonts.googleapis.com/css2?family=Aclonica&family=Almendra&family=Amita&family=Arbutus&family=Audiowide&family=Barriecito&family=Creepster&family=Do+Hyeon&family=Dokdo&family=Faster+One&family=Geo&family=IM+Fell+DW+Pica&family=Irish+Grover&family=Macondo+Swash+Caps&family=MedievalSharp&family=Metal+Mania&family=Monoton&family=Russo+One&family=Saira+Stencil+One&family=Shojumaru&family=Short+Stack&family=Snowburst+One&family=Staatliches&family=Trade+Winds&family=Turret+Road&family=UnifrakturCook:wght@700&family=VT323&family=Vampiro+One&family=Vibes&family=Walter+Turncoat&family=Wendy+One&family=Yatra+One&display=swap" rel="stylesheet">
+	<div class="loader">
+    <span></span>
+    <span></span>
+    <span></span>
+	  <span></span>
+	  <span></span>
+	  <span></span>
+	  <span></span>
+	  <span></span>
+    <span></span>
+    <span></span>
+	  <span></span>
+	  <span></span>
+	  <span></span>
+	  <span></span>
+	  <span></span>
+    <span></span>
+    <span></span>
+	  <span></span>
+	  <span></span>
+	  <span></span>
+	  <span></span>
+	  <span></span>
+    <span></span>
+    <span></span>
+	  <span></span>
+	  <span></span>
+	  <span></span>
+	  <span></span>
+  </div>
 <div class="row">
-  <div class="col-2">
-    
+  <div class="col-3">
+    <h1>GO NUTs</h1>
     @using (Html.BeginForm("Create", "Squirrels", FormMethod.Get))
     {
       @Html.HiddenFor(model => model.Image)
@@ -18,7 +48,8 @@
     <p class="squirrel-name" style="@RandomThing.RandomFont() color:@RandomThing.RandomColor()">@Model.Name</p>
   </div>
   
-  <div class="col-2">
+  <div class="col-1">
+    <h1>NO NUTs</h1>
     @using (Html.BeginForm("Index", "Squirrels"))
     {
         <i class="fas fa-acorn button-container fa-5x"></i>
@@ -26,3 +57,4 @@
     }
   </div>
 </div>
+

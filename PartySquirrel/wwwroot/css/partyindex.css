@@ -8,12 +8,13 @@
 }
 .title{
   font-family: bog;
+  font-size: 7rem;
 }
 
 .linkbox {
   box-sizing: border-box;
   align-items:center;
-  background: #050801;
+  background:black;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
