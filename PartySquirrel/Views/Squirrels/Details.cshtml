@@ -2,15 +2,25 @@
 @using System.Security.Claims;
 <link rel="stylesheet" href="~/css/navfont.css">
 <link rel="stylesheet" href="~/css/site.css">
+<link rel="stylesheet" href="~/css/squirreldetails.css">
+<link href="https://fonts.googleapis.com/css2?family=Aclonica&family=Almendra&family=Amita&family=Arbutus&family=Audiowide&family=Barriecito&family=Creepster&family=Do+Hyeon&family=Dokdo&family=Faster+One&family=Geo&family=IM+Fell+DW+Pica&family=Irish+Grover&family=Macondo+Swash+Caps&family=MedievalSharp&family=Metal+Mania&family=Monoton&family=Russo+One&family=Saira+Stencil+One&family=Shojumaru&family=Short+Stack&family=Snowburst+One&family=Staatliches&family=Trade+Winds&family=Turret+Road&family=UnifrakturCook:wght@700&family=VT323&family=Vampiro+One&family=Vibes&family=Walter+Turncoat&family=Wendy+One&family=Yatra+One&display=swap" rel="stylesheet">
 <h1>Squirrel Details</h1>
 
 <div id="sqldetails">
-  <img src="@Model.Image">
-  <h3>@Html.Label("Name"): @Html.DisplayFor(model => model.Name)</h3>
-  <h3>@Html.Label("Party Trick"): @Html.DisplayFor(model => model.PartyTrick)</h3>
-  <h3>@Html.Label("Party Story"): @Html.DisplayFor(model => model.PartyStory)</h3>
-  <h3>@Html.Label("Party Location"): @Html.DisplayFor(model => model.PartyLocation)</h3>
-  <h3>@Html.Label("Party Since"): @Html.DisplayFor(model => model.PartySince)</h3>
+  <div class="sqlimage mb-3">
+    <img src="@Model.Image">
+  </div>
+  <div class="card mb-5">
+    <div class="card-header bg-secondary text-dark">
+      <h3><span style="@RandomThing.RandomFont() color:@RandomThing.RandomColor()">@Model.Name's</span> Deets</h3>
+    </div>
+    <div class="card-body">
+      <h3><span class="text-dark mr-3">@Html.Label("Party Trick"):</span> @Html.DisplayFor(model => model.PartyTrick)</h3>
+      <h3><span class="text-dark mr-3">@Html.Label("Party Story"):</span> @Html.DisplayFor(model => model.PartyStory)</h3>
+      <h3><span class="text-dark mr-3">@Html.Label("Party Location"):</span> @Html.DisplayFor(model => model.PartyLocation)</h3>
+      <h3><span class="text-dark mr-3">@Html.Label("Party Since"):</span> @Html.DisplayFor(model => model.PartySince)</h3>
+    </div>
+  </div>
 
   <h5>@Html.ActionLink("Back to Squirrels", "Index")</h5>
 
