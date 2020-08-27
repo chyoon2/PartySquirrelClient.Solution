@@ -2,25 +2,23 @@
 for details on configuring this project to bundle and minify static web assets. */
 /* font styles
 -------------------------------------------------- */
-
 @font-face{
-  font-family: yamagachi2050chromeital;
-  src:url("../css/fonts/yamagachi2050chromeital.ttf");
+  font-family: road;
+  src:url("../css/fonts/road.ttf");
 }
-
 nav {
-  font-family: yamagachi2050chromeital;
+  font-family: road;
 }
 a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
-  font-family: yamagachi2050chromeital;
+  font-family: road;
   color: #C0C0C0;
 }
 a.nav-link {
   color: rgba(240, 244, 3, 0.9);
-  transition: .5s;  /*reflections*/
+  transition: .5s;
 }
 nav{
   background: rgba(240, 244, 3, 0.9);
@@ -92,20 +90,33 @@ body {
   line-height: 60px; /* Vertically center the text there */
 }
 
-h1 {
+@font-face{
+  font-family: road;
+  src:url("../css/fonts/road.ttf");
+}
+
+/* h1 {
   text-align: center;
   font-size: 5rem;
   margin-top: 7rem;
   margin-bottom: 2rem;
   color: #fa26a0;
-  font-family:'Fugaz One'; 
+  font-family: road; 
   font-weight: bold;
   text-shadow: 2px 2px 10px rgba(240, 244, 3, 0.9);
-}
-
-@font-face{
-  font-family: yamagachi2050chromeital;
-  src:url("../css/fonts/yamagachi2050chromeital.ttf");
+} */
+h1{
+color: rgba(240, 244, 3, 0.9);
+  font-family: 'road';
+  font-weight: bold;
+  -webkit-transition: text-shadow 1s ease;
+  text-shadow: 0 0 1px rgba(0,0,0,.1);
+  text-shadow: 2px 2px 10px #Fa26a0;
+  text-align: center;
+  font-size: 5rem;
+  margin-top: 7rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
 }
 
 .container-fluid {
