@@ -2,16 +2,14 @@
   font-family: bog;
   src:url("../css/fonts/bog.ttf");
 }
-
+@font-face{
+  font-family: yellowc;
+  src:url("../css/fonts/yellowc.ttf");
+}
 .title{
   font-family: bog;
 }
 
-.translate{
-  text-align: center;
-  position: relative;
-  top: -20px;
-}
 /* .linkbox {
   box-sizing: border-box;
   align-items:center;

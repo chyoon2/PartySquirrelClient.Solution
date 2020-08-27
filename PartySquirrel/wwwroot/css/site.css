@@ -2,20 +2,20 @@
 for details on configuring this project to bundle and minify static web assets. */
 /* font styles
 -------------------------------------------------- */
-
+/* 
 @font-face{
-  font-family: yellowc;
-  src:url("../css/fonts/yellowc.ttf");
+  font-family: dumb;
+  src:url("../css/fonts/dumb.ttf");
 }
 
 nav {
-  font-family: yellowc;
-}
+  font-family: ;
+} */
 a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
-  font-family: yellowc;
+  /* font-family: kicker; */
   color: #C0C0C0;
 }
 a.nav-link {
@@ -92,20 +92,20 @@ body {
   line-height: 60px; /* Vertically center the text there */
 }
 
+@font-face{
+  font-family: road;
+  src:url("../css/fonts/road.ttf");
+}
+
 h1 {
   text-align: center;
   font-size: 5rem;
   margin-top: 7rem;
   margin-bottom: 2rem;
   color: #fa26a0;
-  font-family:'Fugaz One'; 
+  font-family: road; 
   font-weight: bold;
   text-shadow: 2px 2px 10px rgba(240, 244, 3, 0.9);
-}
-
-@font-face{
-  font-family: yamagachi2050chromeital;
-  src:url("../css/fonts/yamagachi2050chromeital.ttf");
 }
 
 .container-fluid {

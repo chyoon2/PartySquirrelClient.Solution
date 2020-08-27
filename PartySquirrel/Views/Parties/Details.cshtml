@@ -3,13 +3,14 @@
 }
 
 <link rel="stylesheet" href="~/css/partydetails.css">
+
 <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Fugaz+One&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Aclonica&family=Almendra&family=Amita&family=Arbutus&family=Audiowide&family=Barriecito&family=Creepster&family=Do+Hyeon&family=Dokdo&family=Faster+One&family=Geo&family=IM+Fell+DW+Pica&family=Irish+Grover&family=Macondo+Swash+Caps&family=MedievalSharp&family=Metal+Mania&family=Monoton&family=Russo+One&family=Saira+Stencil+One&family=Shojumaru&family=Short+Stack&family=Snowburst+One&family=Staatliches&family=Trade+Winds&family=Turret+Road&family=UnifrakturCook:wght@700&family=VT323&family=Vampiro+One&family=Vibes&family=Walter+Turncoat&family=Wendy+One&family=Yatra+One&display=swap" rel="stylesheet">
 
 @using PartySquirrel.ViewModels
 @model PartyDetailsViewModel;
 
-<h1>@Model.User.FirstName's Party</h1>
+<h1 class="help">@Model.User.FirstName's Party</h1>
 
 @if (Model.SquirrelCount == 0)
 {

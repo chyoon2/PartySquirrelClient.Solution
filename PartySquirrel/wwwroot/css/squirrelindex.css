@@ -20,3 +20,7 @@ body {
 .squirrel-name {
   font-size: 35px;
 }
+@font-face{
+  font-family: yellowc;
+  src:url("../css/fonts/yellowc.ttf");
+}
