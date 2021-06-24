@@ -1,0 +1,147 @@
+﻿﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+/* font styles
+-------------------------------------------------- */
+@font-face{
+  font-family: road;
+  src:url("../css/fonts/road.ttf");
+}
+nav {
+  font-family: road;
+}
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+  font-family: road;
+  color: #C0C0C0;
+}
+a.nav-link {
+  color: rgba(240, 244, 3, 0.9);
+  transition: .5s;
+}
+nav{
+  background: rgba(240, 244, 3, 0.9);
+  box-shadow: 0 0 5px rgba(240, 244, 3, 0.9), 0 0 25px rgba(240, 244, 3, 0.9), 0 0 50px rgba(240, 244, 3, 0.9), 0 0 200px rgba(240, 244, 3, 0.9);
+  color: #C0C0C0;
+}
+a.nav-link:hover{
+  background: #fa26a0;
+  box-shadow: 0 0 5px #fa26a0, 0 0 25px  #fa26a0, 0 0 50px  #fa26a0, 0 0 200px  #fa26a0;
+  color: #050801;
+}
+/* Sticky footer styles
+-------------------------------------------------- */
+
+.sponsor{
+  color: pink;
+  border: 5px solid #ddd;	/* thickness and color of border */
+  width: 200px;				/* width of image (px or % or auto) */
+  height: auto;	
+}
+
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+  background-color: black;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+@font-face{
+  font-family: road;
+  src:url("../css/fonts/road.ttf");
+}
+
+/* h1 {
+  text-align: center;
+  font-size: 5rem;
+  margin-top: 7rem;
+  margin-bottom: 2rem;
+  color: #fa26a0;
+  font-family: road; 
+  font-weight: bold;
+  text-shadow: 2px 2px 10px rgba(240, 244, 3, 0.9);
+} */
+h1{
+color: rgba(240, 244, 3, 0.9);
+  font-family: 'road';
+  font-weight: bold;
+  -webkit-transition: text-shadow 1s ease;
+  text-shadow: 0 0 1px rgba(0,0,0,.1);
+  text-shadow: 2px 2px 10px #Fa26a0;
+  text-align: center;
+  font-size: 5rem;
+  margin-top: 7rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+.container-fluid {
+  width: 70%;
+  color: gray;
+}
+
+.btn{
+  padding: 10px 20px;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 20px;
+  border-radius: 10px;
+  /* width: 75%; */
+  height: 50px;
+   /* Specify your width here */
+}
+
+h3 {
+  text-align: left;
+}
+
+/* ------------------------------- */
+#sqldetails img {
+  border-radius:33;
+  padding-bottom: 25px;
+}
+
